@@ -1,0 +1,20 @@
+<h1>Detalhes do livro</h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Número de páginas:</strong>
+  <%= @book.num_pages %>
+</p>
+
+<p>
+  <strong>Conteúdo:</strong>
+  <%= @book.content %>
+</p>
+
+<p>
+  <strong>Adicionado em:</strong>
+  <%= @book.created_at %>
+</p>
+
+<%= link_to 'Editar', edit_book_path(@book) %> |
+<%= link_to 'Voltar', books_path %>

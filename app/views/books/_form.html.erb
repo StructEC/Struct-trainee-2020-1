@@ -1,0 +1,37 @@
+<%= form_with(model: book, local: true) do |form| %>
+  <% if book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this library from being saved:</h2>
+
+      <ul>
+        <% book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, 'Título' %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :num_pages, 'Número de páginas' %>
+    <%= form.number_field :num_pages %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content, 'Conteúdo' %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :author_id, 'Autor' %>
+    <%= form.select :author_id, options_for_select(@authors.map { |author| [author.name, author.id] }) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Criar livro" %>
+  </div>
+<% end %>
