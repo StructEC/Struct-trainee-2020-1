@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   # get '/books', to: 'books#index'
   #
   scope 'books' do
-    get '/', to: 'books#index'
+    # get '/', to: 'books#index'
+    resources :books
   end
 
   # namespace 'books' do
