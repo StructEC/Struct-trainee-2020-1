@@ -1,6 +1,8 @@
 class AuthorsController < ApplicationController
   include AuthorsHelper
 
+  before_action :check_cookie, only: :new
+
   def index
     puts cookies.encrypted[:test]
     @authors = Author.all

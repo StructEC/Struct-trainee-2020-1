@@ -3,6 +3,7 @@ class BooksController < ApplicationController
   def index
     puts session[:test]
     @books = Book.all
+    # response.status = 500
   end
 
   def create

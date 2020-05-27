@@ -9,4 +9,11 @@ module AuthorsHelper
     end
   end
 
+  def check_cookie
+    if cookies.encrypted[:test].nil?
+      flash[:notice] = "Você não pode cadastrar novo autor"
+      redirect_to root_path
+    end
+  end
+
 end
