@@ -1,0 +1,32 @@
+<p id="notice"><%= flash[:notice] %></p>
+
+<h1>Autores salvos</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Nome</th>
+    <th>E-mail</th>
+    <th>Ano</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @authors.each do |author| %>
+    <tr>
+      <td><%= author.name %></td>
+      <td><%= author.email %></td>
+      <td><%= author.year %></td>
+      <td><%= link_to 'Detalhes', author_path(author) %></td>
+      <td><%= link_to 'Editar', edit_author_path(author) %></td>
+      <td><%= link_to 'Deletar', author_path(author), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo autor', new_author_path %>
+<%= link_to 'Home', root_path %>

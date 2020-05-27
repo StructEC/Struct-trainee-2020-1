@@ -1,0 +1,37 @@
+<h1>Novo Autor</h1>
+
+<%= form_with model: @author do |form| %>
+  <% if @author.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@author.errors.count, "error") %> prohibited this author from being saved:</h2>
+
+      <ul>
+        <% @author.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, 'Nome' %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email, 'E-mail' %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year, 'Ano' %>
+    <%= form.number_field :year %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Criar autor" %>
+  </div>
+<% end %>
+
+<%= link_to 'Voltar', authors_path %>
+

@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
 
-  def homepage
-  end
+  def homepage; end
 
 end

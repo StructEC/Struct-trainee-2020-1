@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= flash[:notice] %></p>
 
 <h1>Livros salvos</h1>
 
@@ -20,9 +20,9 @@
       <td><%= book.num_pages %></td>
       <td><%= book.content %></td>
       <td><%= book.author.name %></td>
-      <td><%= link_to 'Detalhes', book %></td>
+      <td><%= link_to 'Detalhes', book_path(book) %></td>
       <td><%= link_to 'Editar', edit_book_path(book) %></td>
-      <td><%= link_to 'Deletar', book, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      <td><%= link_to 'Deletar', book_path(book), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
     </tr>
   <% end %>
   </tbody>
@@ -31,3 +31,4 @@
 <br>
 
 <%= link_to 'Novo Livro', new_book_path %>
+<%= link_to 'Home', root_path %>
