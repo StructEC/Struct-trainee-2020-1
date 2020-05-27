@@ -35,3 +35,5 @@ yarn-debug.log*
 # Ignore project secrets:
 /config/initializers/secret_token.rb
 /config/master.key
+# Ignore application configuration
+/config/application.yml
