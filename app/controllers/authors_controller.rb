@@ -1,6 +1,8 @@
 class AuthorsController < ApplicationController
+  include AuthorsHelper
 
   def index
+    puts cookies.encrypted[:test]
     @authors = Author.all
   end
 

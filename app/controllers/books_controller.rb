@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
 
   def index
+    puts session[:test]
     @books = Book.all
   end
 
