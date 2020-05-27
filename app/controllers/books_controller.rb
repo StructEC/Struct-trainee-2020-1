@@ -10,9 +10,9 @@ class BooksController < ApplicationController
       book.save!
       flash[:notice] = "Livro #{book.name} salvo com sucesso"
       redirect_to books_path
-    rescue
-      flash[:notice] = "Ocorreu um erro"
-      redirect_to root_path
+    rescue => err
+      flash[:notice] = err
+      redirect_to new_book_path
     end
   end
 
@@ -37,9 +37,8 @@ class BooksController < ApplicationController
       flash[:notice] = "Livro #{book.name} alterado com sucesso"
       redirect_to books_path
     rescue => err
-      puts err
-      flash[:notice] = "Ocorreu um erro"
-      redirect_to root_path
+      flash[:notice] = err
+      redirect_to edit_book_path
     end
   end
 
@@ -47,12 +46,12 @@ class BooksController < ApplicationController
     book = Book.find(params[:id])
     begin
       book.destroy!
-      flash[:notice] = "Livro #{@book.name} deletado com sucesso"
-      redirect_to books_path
+      flash[:notice] = "Livro #{book.name} deletado com sucesso"
       # rescue Type => err
     rescue
       flash[:notice] = "Ocorreu um erro"
-      redirect_to root_path
+    ensure
+      redirect_to books_path
     end
   end
 

@@ -8,9 +8,11 @@ class AuthorsController < ApplicationController
     author = Author.new(authors_params)
     begin
       author.save!
+      flash[:notice] = "Autor #{author.name} criado com sucesso"
       redirect_to authors_path
-    rescue
-      redirect_to root_path
+    rescue => err
+      flash[:notice] = err
+      redirect_to new_author_path
     end
   end
 
@@ -30,10 +32,11 @@ class AuthorsController < ApplicationController
     author = Author.find(params[:id])
     begin
       author.update!(authors_params)
-      redirect_to new_author_path
+      flash[:notice] = "Autor #{author.name} alterado com sucesso"
+      redirect_to authors_path
     rescue => err
-      puts err
-      redirect_to root_path
+      flash[:notice] = err
+      redirect_to edit_author_path
     end
   end
 
@@ -41,10 +44,12 @@ class AuthorsController < ApplicationController
     author = Author.find(params[:id])
     begin
       author.destroy!
-      redirect_to authors_path
+      flash[:notice] = "Autor #{author.name} apagado com sucesso"
         # rescue Type => err
     rescue
-      redirect_to root_path
+      flash[:notice] = "Ocorreu um erro"
+    ensure
+      redirect_to authors_path
     end
   end
 
