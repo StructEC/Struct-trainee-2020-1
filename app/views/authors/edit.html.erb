@@ -1,0 +1,25 @@
+<h1>Editar Autor</h1>
+
+<%= form_with model: @author do |form| %>
+  <div class="field">
+    <%= form.label :name, 'Nome' %>
+    <%= form.text_field :name, value: @author.name  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email, 'E-mail' %>
+    <%= form.email_field :email, value: @author.email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year, 'Ano' %>
+    <%= form.number_field :year, value: @author.year %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Atualizar autor" %>
+  </div>
+<% end %>
+
+<%= link_to 'Voltar', authors_path %>
+

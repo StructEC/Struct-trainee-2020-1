@@ -1,0 +1,24 @@
+<h1>Detalhes do autor</h1>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @author.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @author.email %>
+</p>
+
+<p>
+  <strong>Ano:</strong>
+  <%= @author.year %>
+</p>
+
+<p>
+  <strong>Adicionado em:</strong>
+  <%= @author.created_at %>
+</p>
+
+<%= link_to 'Editar', edit_author_path(@author) %> |
+<%= link_to 'Voltar', authors_path %>

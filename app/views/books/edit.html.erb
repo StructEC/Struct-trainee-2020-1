@@ -1,0 +1,30 @@
+<h1>Editar Livro</h1>
+
+<%= form_with model: @book, local: true do |form| %>
+  <div class="field">
+    <%= form.label :name, 'Título' %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :num_pages, 'Número de páginas' %>
+    <%= form.number_field :num_pages %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content, 'Conteúdo' %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :author_id, 'Autor' %>
+    <%= form.select :author_id, options_for_select(@authors.map { |author| [author.name, author.id] }) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Modificar livro" %>
+  </div>
+<% end %>
+
+<%= link_to 'Detalhes', @book %>
+<%= link_to 'Voltar', books_path %>

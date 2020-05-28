@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AulasTrainee</title>
+    <title>Aulas Trainee</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <p id="notice"><%= flash[:notice] %></p>
     <%= yield %>
   </body>
 </html>
