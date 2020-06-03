@@ -1,0 +1,51 @@
+.bg-gray-primary {
+    background-color: #121212;
+}
+
+.bg-gray-secondary {
+    background-color: #272727;
+}
+
+.bg-btn-primary {
+    background-color: #20c358;
+}
+
+.bg-btn-default {
+    background-color: #151515;
+}
+
+.input-search {
+    border-radius: 20px;
+    border: none;
+    font-size: 10px;
+}
+
+.bg-gray-gradient {
+    background-image: linear-gradient(#272727, #121212);
+}
+
+.progress-music {
+    height: 0.2rem;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+li {
+    padding: 0 0 6px 0 !important;
+    font-size: 14px;
+}
+
+th {
+    border: none !important;
+    font-size: 10px;
+}
+
+td, tr {
+    color: white;
+    font-size: 14px;
+    border-color: #272727 !important;
+}
+
+.content {
+    min-height: 640px;
+}
