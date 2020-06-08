@@ -7,6 +7,16 @@ Rails.application.routes.draw do
   # get '/books', to: 'books#index'
   #
   resources :books, :authors
+  scope 'auth' do
+    get 'login', to: 'sessions#new', as: :login
+    post 'login', to: 'sessions#create'
+    delete 'logout', to: 'sessions#destroy', as: :logout
+  end
+
+  scope 'users' do
+    get 'new', to: 'users#new', as: :new_user
+    post 'new', to: 'users#create'
+  end
 
   # scope 'authors' do
   #   get '/', to: 'authors#index', as: :authors

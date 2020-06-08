@@ -61,3 +61,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Nossas gems
 gem 'figaro'
+
+gem 'sorcery'
+
+gem 'bootstrap', '~> 4.5.0'
+gem 'jquery-rails'
