@@ -8,6 +8,17 @@ Rails.application.routes.draw do
   #
   resources :books, :authors
 
+  scope 'users' do
+    get 'novo_usuario', to: 'users#new', as: :new_user
+    post 'novo_usuario', to: 'users#create'
+  end
+
+  scope 'auth' do
+    get 'login', to: 'sessions#new', as: :login
+    post 'login', to: 'sessions#create'
+    delete 'logout', to: 'sessions#destroy', as: :logout
+  end
+
   # scope 'authors' do
   #   get '/', to: 'authors#index', as: :authors
   #   get '/new', to: 'authors#new', as: :new_author

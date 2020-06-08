@@ -2,3 +2,9 @@
 
 <%= link_to 'Livros', books_path %>
 <%= link_to 'Autores', authors_path %>
+
+<% if current_user %>
+  <h1> Email: <%= current_user.email %></h1>
+<% else %>
+  <h1> Usuário não logado </h1>
+<% end %>
