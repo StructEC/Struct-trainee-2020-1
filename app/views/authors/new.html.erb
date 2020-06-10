@@ -1,25 +1,35 @@
-<h1>Novo Autor</h1>
+<div class="container-fluid">
+  <div class="row no-gutter">
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4">Novo autor</h3>
+              <%= form_with model: @author, method: 'post' do |form| %>
+                <div class="form-label-group">
+                  <%= form.label :name, 'Nome' %>
+                  <%= form.text_field :name, class: 'form-control', placeholder: 'Seu nome...' %>
+                </div>
 
-<%= form_with model: @author do |form| %>
-  <div class="field">
-    <%= form.label :name, 'Nome' %>
-    <%= form.text_field :name %>
+                <div class="form-label-group">
+                  <%= form.label :email, 'E-mail' %>
+                  <%= form.email_field :email, class: 'form-control', placeholder: 'Seu Email...', required: true, autofocus: true %>
+                </div>
+
+                <div class="form-label-group">
+                  <%= form.label :year, 'Ano' %>
+                  <%= form.number_field :year, class: 'form-control' %>
+                </div>
+
+                <%= form.submit "Criar autor", class: 'btn btn-lg btn-primary btn-login text-uppercase font-weight-bold m-2' %>
+              <% end %>
+              <%= link_to 'Voltar', authors_path, class: 'btn btn-primary m-2' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :email, 'E-mail' %>
-    <%= form.email_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :year, 'Ano' %>
-    <%= form.number_field :year %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Criar autor" %>
-  </div>
-<% end %>
-
-<%= link_to 'Voltar', authors_path %>
+</div>
 

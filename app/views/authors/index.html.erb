@@ -1,30 +1,34 @@
-<h1>Autores salvos</h1>
+<!-- Header -->
+<header class="bg-primary text-center py-5 mb-4">
+  <div class="container">
+    <h1 class="font-weight-light text-white">Nossos autores</h1>
+    <%= link_to 'Novo autor', new_author_path, class: 'btn btn-success' %>
+  </div>
+</header>
 
-<table>
-  <thead>
-  <tr>
-    <th>Nome</th>
-    <th>E-mail</th>
-    <th>Ano</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
+<!-- Page Content -->
+<div class="container">
+  <div class="row">
+    <% @authors.each do |author| %>
+      <!-- Author -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-0 shadow">
+          <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0"><%= "#{author.name}, #{author.year}" %></h5>
+            <div class="card-text text-black-50"><%= author.email %></div>
+          </div>
+          <div class="card-footer">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <%= link_to 'Editar', edit_author_path(author.id), class: 'btn btn-outline-info' %>
+              <%= link_to 'Detalhes', author_path(author.id), class: 'btn btn-outline-info' %>
+              <%= link_to '<i class="fa fa-trash"></i>'.html_safe, author_path(author.id), method: :delete, class: 'btn btn-outline-danger' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <!-- /.row -->
 
-  <tbody>
-  <% @authors.each do |author| %>
-    <tr>
-      <td><%= author.name %></td>
-      <td><%= author.email %></td>
-      <td><%= author.year %></td>
-      <td><%= link_to 'Detalhes', author_path(author) %></td>
-      <td><%= link_to 'Editar', edit_author_path(author) %></td>
-      <td><%= link_to 'Deletar', author_path(author), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'Novo autor', new_author_path %>
-<%= link_to 'Home', root_path %>
+</div>

@@ -12,5 +12,19 @@
  *
  */
 
+@import "variables";
 @import "bootstrap";
 @import "font-awesome";
+
+.navbar {
+  position: relative;
+}
+
+.image-container {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.image-fluid {
+  min-width: 100%;
+}
