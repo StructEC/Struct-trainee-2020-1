@@ -34,6 +34,7 @@ class AuthorsController < ApplicationController
 
   def update
     author = Author.find(params[:id])
+    params[:photo].size
     begin
       author.update!(authors_params)
       flash[:notice] = "Autor #{author.name} alterado com sucesso"
@@ -59,7 +60,7 @@ class AuthorsController < ApplicationController
 
   private
   def authors_params
-    params.require('author').permit(:name, :year, :email)
+    params.require('author').permit(:name, :year, :email, :photo)
   end
 
 end

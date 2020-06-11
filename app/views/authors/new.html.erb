@@ -22,6 +22,11 @@
                   <%= form.number_field :year, class: 'form-control' %>
                 </div>
 
+                <div class="form-label-group">
+                  <%= form.label :photo, 'Foto de perfil' %>
+                  <%= form.file_field :photo, class: 'form-control' %>
+                </div>
+
                 <%= form.submit "Criar autor", class: 'btn btn-lg btn-primary btn-login text-uppercase font-weight-bold m-2' %>
               <% end %>
               <%= link_to 'Voltar', authors_path, class: 'btn btn-primary m-2' %>
