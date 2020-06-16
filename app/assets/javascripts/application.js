@@ -21,6 +21,7 @@
 //= require moment
 //= require fullcalendar
 
-//= require_tree .
+//= require Chart.bundle.min
+
 
 

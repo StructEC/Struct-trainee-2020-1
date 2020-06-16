@@ -69,3 +69,6 @@ gem 'sorcery'
 
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+
+# Graph js
+gem 'chartjs-ror'
