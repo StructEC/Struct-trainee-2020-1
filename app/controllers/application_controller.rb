@@ -5,4 +5,6 @@ class ApplicationController < ActionController::Base
     cookies.encrypted[:test] = "Você agora tem um valor no cookie"
   end
 
+  def aula_js
+  end
 end

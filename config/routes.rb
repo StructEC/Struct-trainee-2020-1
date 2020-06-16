@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     delete 'logout', to: 'sessions#destroy', as: :logout
   end
 
+  get 'aula_js', to: 'application#aula_js'
+
   # scope 'authors' do
   #   get '/', to: 'authors#index', as: :authors
   #   get '/new', to: 'authors#new', as: :new_author
