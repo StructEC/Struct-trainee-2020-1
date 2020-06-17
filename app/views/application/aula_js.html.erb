@@ -1,27 +1,23 @@
-<%= javascript_include_tag 'custom' %>
-
-<!-- Jquery Example -->
-<div class="container text-center pt-5">
-  <h1 class="">Formulário</h1>
+<%# javascript_include_tag "custom" %>
+<!--
+<div class="container">
+  <h1 class="text-center">Forms</h1>
   <%= form_with url: "/" do |form| %>
     <div class="form-group">
-      <%= form.label :selecionador, "Gostaria de escolher um número" %>
-      <%= form.select :selecionador, [["Não", false], ["Sim", true]],{}, class: "form-control" %>
+      <%= form.label "Você gostaria de escolher um número?" %>
+      <%= form.select :selecionador, [["Não", false], ["Sim", true]], {}, class: 'form-control' %>
     </div>
-    <div class="form-group numbers-hide">
-      <%= form.label :numbers, "Escolha um número" %>
-      <%= form.select :numbers, %w(1 2 3 4 5 6), {}, class: "form-control" %>
+
+    <div class="form-group number-hide">
+      <%= form.label "Escolha um número" %>
+      <%= form.select :numbers, [1, 2, 3, 4, 5], {}, class: 'form-control' %>
     </div>
+
   <% end %>
+</div>-->
 
-</div>
+<%# javascript_include_tag "calendar" %>
+<!-- <div id="event_calendar"></div>-->
 
-
-<!-- Full Calendar Example -->
-<%# javascript_include_tag 'calendar' %>
-<!-- <div class="pt-5" id="event_calendar"></div> -->
-
-<!-- Chart JS Example -->
-<%= javascript_include_tag 'chart' %>
-
-<canvas id="myChart" width="400" height="400"></canvas>
+<%= javascript_include_tag "chart" %>
+<canvas id="myChart"></canvas>

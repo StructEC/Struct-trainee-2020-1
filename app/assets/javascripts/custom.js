@@ -1,16 +1,14 @@
 $(document).on('turbolinks:load', function () {
-    let selecionador = $('#selecionador');
+   let selecionador = $("#selecionador");
+   let numbers = $(".number-hide");
+   numbers.hide();
 
-    // Inicialização sem mostrar o selecionador de números
-    let numbers = $('.numbers-hide');
-    numbers.hide();
+   selecionador.change(function () {
+      if (selecionador.val() === "true") {
+         numbers.show();
+      } else {
+         numbers.hide();
+      }
+   })
 
-    // Visualização
-    selecionador.change(function () {
-        if (this.value === "true") {
-            numbers.show();
-        } else {
-            numbers.hide();
-        }
-    })
 });
